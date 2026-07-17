@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Mohammad Ahmad | Backend & Distributed Systems Engineer</title>
+    <meta name="title" content="Mohammad Ahmad | Backend & Distributed Systems Engineer">
+    <meta name="description" content="Portfolio of Mohammad Ahmad, a Software Engineer specializing in backend engineering, distributed systems, cloud infrastructure, and AI applications.">
+    <meta name="author" content="Mohammad Ahmad">
+    <meta name="keywords" content="Backend Engineer, Distributed Systems, Cloud Infrastructure, DevOps, Node.js, Redis, BullMQ, FastAPI, Docker, CI/CD, System Design">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/mahmad091323">
+    <meta property="og:title" content="Mohammad Ahmad | Backend & Distributed Systems Engineer">
+    <meta property="og:description" content="Portfolio of Mohammad Ahmad, a Software Engineer specializing in backend systems, distributed architectures, and AI.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/mahmad091323/portfolio/main/assets/preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Mohammad Ahmad | Backend & Distributed Systems Engineer">
+    <meta property="twitter:description" content="Portfolio of Mohammad Ahmad, a Software Engineer specializing in backend systems, distributed architectures, and AI.">
+
+    <!-- Favicon (Premium Custom SVG Favicon) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23111827'/%3E%3Cpath d='M30 35 L50 20 L70 35 L70 65 L50 80 L30 65 Z' fill='none' stroke='%233B82F6' stroke-width='6' stroke-linejoin='round'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%238B5CF6'/%3E%3Cline x1='30' y1='35' x2='50' y2='50' stroke='%233B82F6' stroke-width='3'/%3E%3Cline x1='70' y1='35' x2='50' y2='50' stroke='%233B82F6' stroke-width='3'/%3E%3Cline x1='50' y1='80' x2='50' y2='50' stroke='%233B82F6' stroke-width='3'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas for Distributed System Node Animation -->
+    <canvas id="nodes-canvas" aria-hidden="true"></canvas>
+
+    <!-- Custom Cursor Glow -->
+    <div id="cursor-glow" class="cursor-glow" aria-hidden="true"></div>
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo" aria-label="Mohammad Ahmad - Home">
+                <span class="logo-icon" aria-hidden="true">&lt;/&gt;</span>
+                <span class="logo-text">M. Ahmad</span>
+            </a>
+            
+            <!-- Desktop Nav Links -->
+            <nav class="nav-links" id="nav-menu" aria-label="Main Navigation">
+                <a href="#about" class="nav-item">About</a>
+                <a href="#skills" class="nav-item">Skills</a>
+                <a href="#projects" class="nav-item">Projects</a>
+                <a href="#leadership" class="nav-item">Leadership</a>
+                <a href="#achievements" class="nav-item">Achievements</a>
+                <a href="#education" class="nav-item">Education</a>
+                <a href="#certifications" class="nav-item">Certifications</a>
+                <a href="#contact" class="nav-item">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+                    <!-- Moon Icon (Dark Mode active) -->
+                    <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    <!-- Sun Icon (Light Mode active) -->
+                    <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                    </svg>
+                </button>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    Open to Production Roles
+                </div>
+                <h1 class="hero-title">
+                    <span class="name-highlight">Mohammad Ahmad</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+                </h2>
+                
+                <p class="hero-value-prop">
+                    Architecting highly scalable backends, resilient distributed architectures, cloud-native deployments, and custom AI integrations.
+                </p>
+                
+                <div class="hero-ctas">
+                    <a href="#projects" class="btn btn-primary">
+                        View Work
+                        <svg class="btn-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                    <a href="assets/resume.pdf" class="btn btn-secondary" download="Mohammad_Ahmad_Resume.pdf">
+                        Get Resume
+                        <svg class="btn-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    </a>
+                </div>
+
+                <div class="hero-socials">
+                    <a href="https://github.com/mahmad091323" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="mailto:mahmad091323@gmail.com" class="social-link" aria-label="Send Email">
+                        <svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <a href="#about" class="scroll-indicator" aria-label="Scroll to About Section">
+                <span class="chevron"></span>
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section container reveal">
+            <h2 class="section-title">01. About Me</h2>
+            <div class="about-grid">
+                <div class="about-content">
+                    <p class="lead-text">
+                        I build highly performant backends and reliable distributed systems. As a Computer Science student at <strong>Symbiosis Institute of Technology, Pune</strong>, I specialize in architecting systems that optimize processing latency, secure multi-tenant workspaces, and leverage machine learning.
+                    </p>
+                    <p>
+                        My engineering philosophy centers around <strong>simplicity, predictability, and horizontal scalability</strong>. Whether it's setting up isolated multi-language code executors with BullMQ job queues, developing microservices for hostel roommate allocation, or managing developer communities, I prioritize clean code boundaries and automated workflows.
+                    </p>
+                    <p>
+                        I focus on building production-grade software using containerized deployments (Docker), continuous integration pipelines (GitHub Actions), and optimized data caching patterns (Redis). I'm looking for opportunities to work alongside teams building high-reliability services, core APIs, and cloud-native solutions.
+                    </p>
+                </div>
+                <div class="about-highlight-card">
+                    <div class="metric-group">
+                        <div class="metric-item">
+                            <span class="metric-number">4+</span>
+                            <span class="metric-label">Key Systems Engineered</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-number">50%</span>
+                            <span class="metric-label">Avg. Latency Reduction</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-number">200+</span>
+                            <span class="metric-label">Developers Mentored</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section container reveal">
+            <h2 class="section-title">02. Technical Focus</h2>
+            <p class="section-subtitle">Categorized technologies mapped to production applications.</p>
+            
+            <div class="skills-grid">
+                <!-- Systems Programming & Core Languages -->
+                <div class="skill-category-card">
+                    <h3 class="category-title">
+                        <svg class="category-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        Languages
+                    </h3>
+                    <div class="badges-wrapper">
+                        <span class="badge" data-tech="javascript" data-desc="Async flow, callbacks, Promises, Event Loop, runtime bindings.">JavaScript</span>
+                        <span class="badge" data-tech="python" data-desc="FastAPI, Scikit-learn data science pipeline, scripts.">Python</span>
+                        <span class="badge" data-tech="java" data-desc="OOP patterns, multi-threading basics, DSA constructs.">Java</span>
+                        <span class="badge" data-tech="cpp" data-desc="Manual memory layout, algorithmic speed, parsing engines.">C++</span>
+                        <span class="badge" data-tech="sql" data-desc="Complex joins, schema definitions, index management.">SQL</span>
+                    </div>
+                </div>
+
+                <!-- Backend & Architecture -->
+                <div class="skill-category-card">
+                    <h3 class="category-title">
+                        <svg class="category-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                        Backend & Async
+                    </h3>
+                    <div class="badges-wrapper">
+                        <span class="badge" data-tech="nodejs" data-desc="V8 engine runtime, event loops, I/O handling, streams.">Node.js</span>
+                        <span class="badge" data-tech="express" data-desc="Routing, custom middleware pipelines, CORS, error handling.">Express.js</span>
+                        <span class="badge" data-tech="fastapi" data-desc="Pydantic models, async routing, automatically generated OpenAPI specs.">FastAPI</span>
+                        <span class="badge" data-tech="redis" data-desc="In-memory cache, key-value data structures, backend queue backing.">Redis</span>
+                        <span class="badge" data-tech="bullmq" data-desc="Distributed worker queues, job retries, backoff strategies.">BullMQ</span>
+                        <span class="badge" data-tech="socketio" data-desc="WebSockets, real-time fallback transport, heartbeat intervals.">Socket.io</span>
+                    </div>
+                </div>
+
+                <!-- Databases & Persistence -->
+                <div class="skill-category-card">
+                    <h3 class="category-title">
+                        <svg class="category-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4"/></svg>
+                        Databases
+                    </h3>
+                    <div class="badges-wrapper">
+                        <span class="badge" data-tech="mongodb" data-desc="BSON document store, aggregations, sharding, Atlas setup.">MongoDB</span>
+                        <span class="badge" data-tech="postgresql" data-desc="Relational tables, schema safety, transaction isolation levels.">PostgreSQL</span>
+                        <span class="badge" data-tech="mysql" data-desc="Structured storage, indexes, standard relational execution.">MySQL</span>
+                        <span class="badge" data-tech="supabase" data-desc="PostgREST wrapper, row-level security (RLS) policies.">Supabase</span>
+                        <span class="badge" data-tech="firebase" data-desc="Firestore, real-time syncing listener protocols.">Firebase</span>
+                    </div>
+                </div>
+
+                <!-- Infrastructure, Cloud & DevOps -->
+                <div class="skill-category-card">
+                    <h3 class="category-title">
+                        <svg class="category-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                        Infrastructure & Cloud
+                    </h3>
+                    <div class="badges-wrapper">
+                        <span class="badge" data-tech="aws" data-desc="AWS EC2 instances, ECS container orchestration, ECR registry, VPC.">AWS (EC2, ECS, ECR)</span>
+                        <span class="badge" data-tech="docker" data-desc="Dockerfile optimization, multi-stage builds, isolated volumes.">Docker</span>
+                        <span class="badge" data-tech="nginx" data-desc="Reverse proxy, load balancing, SSL termination, static headers.">Nginx</span>
+                        <span class="badge" data-tech="actions" data-desc="Automated test runners, build pipelines, secure secrets.">GitHub Actions CI/CD</span>
+                        <span class="badge" data-tech="vercel-render" data-desc="Static deployments, serverless functions routing, cloud host.">Vercel & Render</span>
+                    </div>
+                </div>
+
+                <!-- Frontend Integration -->
+                <div class="skill-category-card">
+                    <h3 class="category-title">
+                        <svg class="category-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                        Frontend & UI
+                    </h3>
+                    <div class="badges-wrapper">
+                        <span class="badge" data-tech="nextjs" data-desc="App Router, Server Components, page caching, routing layouts.">Next.js</span>
+                        <span class="badge" data-tech="reactjs" data-desc="Hooks, State updates, DOM reconciliation, lifecycle events.">React.js</span>
+                        <span class="badge" data-tech="tailwind" data-desc="Utility classes, design systems token configurations, responsiveness.">Tailwind CSS</span>
+                        <span class="badge" data-tech="vite" data-desc="ESM-based HMR bundler, fast dev servers, optimized builds.">Vite</span>
+                    </div>
+                </div>
+
+                <!-- Systems Design & AI -->
+                <div class="skill-category-card">
+                    <h3 class="category-title">
+                        <svg class="category-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 01-2 2h0a2 2 0 01-2-2v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                        CS Concepts & AI
+                    </h3>
+                    <div class="badges-wrapper">
+                        <span class="badge" data-tech="systemdesign" data-desc="Load balancers, horizontal scaling, caching strategies, API gateways.">System Design</span>
+                        <span class="badge" data-tech="ds_algo" data-desc="Array, graph nodes, hash maps, complexity analysis (Big O).">DSA & OOP</span>
+                        <span class="badge" data-tech="gemini" data-desc="Generative text pipelines, context control prompt structures.">Gemini API</span>
+                        <span class="badge" data-tech="scikit" data-desc="K-Means clustering, dataset preprocessing, scaling metrics.">Scikit-learn</span>
+                        <span class="badge" data-tech="apis" data-desc="HTTP protocols, status codes, query pagination, headers config.">REST APIs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Skill Info Panel -->
+            <div id="skill-detail-panel" class="skill-detail-panel" aria-live="polite">
+                <span class="panel-placeholder">Click or hover over any skill badge above to inspect technical details...</span>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section container reveal">
+            <h2 class="section-title">03. Production Showcase</h2>
+            <p class="section-subtitle">Detailed product showcases highlighting system architecture, performance engineering, and challenges.</p>
+
+            <div class="projects-container">
+                <!-- PROJECT 1: RoomSync -->
+                <article class="project-showcase">
+                    <div class="project-header">
+                        <div class="project-meta">
+                            <span class="project-tag">Distributed Systems</span>
+                            <span class="project-tag font-mono">3-Service Microservices</span>
+                        </div>
+                        <h3 class="project-title">RoomSync — Intelligent Roommate Allocation</h3>
+                    </div>
+
+                    <div class="project-body-grid">
+                        <div class="project-details">
+                            <h4 class="details-heading">The Challenge</h4>
+                            <p>
+                                Manual roommate matching at scale is bottlenecked by subjective student data and high processing times. Institutions lacked a repeatable method to process preference matrix points safely while preserving system reliability.
+                            </p>
+                            
+                            <h4 class="details-heading">The Architecture</h4>
+                            <p>
+                                Deployed a split-responsibility 3-service backend: A high-speed <strong>Next.js</strong> dashboard, a core <strong>Node.js/Express</strong> API Gateway managing user states, and an isolated <strong>Python FastAPI</strong> engine running <strong>Scikit-learn</strong> K-Means clustering algorithm over 30+ compatibility parameters per student.
+                            </p>
+
+                            <div class="project-features">
+                                <div><strong>Optimization:</strong> Auto-groups compatible pairs reducing matching conflicts.</div>
+                                <div><strong>Admin Controls:</strong> Overrides, room-locks, and change-request pipelines.</div>
+                                <div><strong>Data Flow:</strong> Integrated CSV import pipeline with active Google Sheets sync.</div>
+                            </div>
+                        </div>
+
+                        <!-- Architectural Visual Panel -->
+                        <div class="project-visual-panel">
+                            <div class="arch-title">System Architecture</div>
+                            <div class="architecture-diagram room-sync-arch">
+                                <!-- Service 1 -->
+                                <div class="arch-node client-node">
+                                    <div class="node-label">Client View</div>
+                                    <div class="node-sub">Next.js SPA</div>
+                                </div>
+                                <div class="arch-arrow">➔</div>
+                                <!-- Service 2 -->
+                                <div class="arch-node api-node">
+                                    <div class="node-label">API Gateway</div>
+                                    <div class="node-sub">Express/MongoDB</div>
+                                </div>
+                                <div class="arch-arrow-split">
+                                    <div class="arrow-up">↗</div>
+                                    <div class="arrow-down">↘</div>
+                                </div>
+                                <div class="arch-node-group">
+                                    <!-- Service 3 -->
+                                    <div class="arch-node ml-node">
+                                        <div class="node-label">ML Inference</div>
+                                        <div class="node-sub">FastAPI/Scikit</div>
+                                    </div>
+                                    <!-- Sync -->
+                                    <div class="arch-node sync-node">
+                                        <div class="node-label">Data Sync</div>
+                                        <div class="node-sub">Google Sheets</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tech-stack-list">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Scikit-learn</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="project-metric">
+                            <span class="metric-val">30+</span>
+                            <span class="metric-desc">Datapoints Evaluated / User</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mahmad091323" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Codebase
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 2: Codemia -->
+                <article class="project-showcase">
+                    <div class="project-header">
+                        <div class="project-meta">
+                            <span class="project-tag">Backend Infrastructure</span>
+                            <span class="project-tag font-mono">Job Queues & Sandbox</span>
+                        </div>
+                        <h3 class="project-title">Codemia — Automated Code Grading Engine</h3>
+                    </div>
+
+                    <div class="project-body-grid">
+                        <div class="project-details">
+                            <h4 class="details-heading">The Challenge</h4>
+                            <p>
+                                Executing untrusted user code in multiple programming languages (C++, Java, Python, JavaScript) synchronously blocks standard API gateways and creates massive security/concurrency vulnerabilities.
+                            </p>
+                            
+                            <h4 class="details-heading">The Architecture</h4>
+                            <p>
+                                Designed a scalable, asynchronous message passing system. Submissions are pushed to <strong>Redis</strong>-backed <strong>BullMQ</strong> job queues to prevent CPU thread exhaustion on the web server. Worker instances consume queue items and route execution jobs safely to isolated sandboxed execution endpoints (<strong>Piston API</strong>), caching the output.
+                            </p>
+
+                            <div class="project-features">
+                                <div><strong>Queued Execution:</strong> Isolated worker processes for high-volume concurrent runs.</div>
+                                <div><strong>Secure Auth:</strong> Role-based access control with robust JWT verification structures.</div>
+                                <div><strong>Nginx Routing:</strong> Reverse proxy setup for SSL termination and static caching.</div>
+                            </div>
+                        </div>
+
+                        <!-- Architectural Visual Panel -->
+                        <div class="project-visual-panel">
+                            <div class="arch-title">Message Queue & Execution Architecture</div>
+                            <div class="architecture-diagram codemia-arch">
+                                <!-- Client -->
+                                <div class="arch-node client-node">
+                                    <div class="node-label">React App</div>
+                                    <div class="node-sub">User Submission</div>
+                                </div>
+                                <div class="arch-arrow">➔</div>
+                                <!-- API -->
+                                <div class="arch-node api-node">
+                                    <div class="node-label">Backend API</div>
+                                    <div class="node-sub">Express Router</div>
+                                </div>
+                                <div class="arch-arrow">➔</div>
+                                <!-- Queue -->
+                                <div class="arch-node queue-node">
+                                    <div class="node-label">Redis Queue</div>
+                                    <div class="node-sub">BullMQ Broker</div>
+                                </div>
+                                <div class="arch-arrow">➔</div>
+                                <!-- Worker / Sandbox -->
+                                <div class="arch-node sand-node">
+                                    <div class="node-label">Piston Engine</div>
+                                    <div class="node-sub">Sandbox Isolation</div>
+                                </div>
+                            </div>
+
+                            <div class="tech-stack-list">
+                                <span class="tech-tag">Redis</span>
+                                <span class="tech-tag">BullMQ</span>
+                                <span class="tech-tag">Piston API</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Supabase</span>
+                                <span class="tech-tag">Nginx</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="project-metric">
+                            <span class="metric-val">50%</span>
+                            <span class="metric-desc">Reduction in Execution Latency</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mahmad091323" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Codebase
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 3: CraftMyProfile -->
+                <article class="project-showcase">
+                    <div class="project-header">
+                        <div class="project-meta">
+                            <span class="project-tag">AI Engineering</span>
+                            <span class="project-tag font-mono">API Integration & CI/CD</span>
+                        </div>
+                        <h3 class="project-title">CraftMyProfile — AI-Powered Resume Builder</h3>
+                    </div>
+
+                    <div class="project-body-grid">
+                        <div class="project-details">
+                            <h4 class="details-heading">The Challenge</h4>
+                            <p>
+                                Creating contextually accurate resume content customized to target job roles requires highly structured prompts to prevent general AI hallucinations and ensure PDF formatting compliance.
+                            </p>
+                            
+                            <h4 class="details-heading">The Architecture</h4>
+                            <p>
+                                Engineered a full-stack system utilizing <strong>React.js (Vite)</strong> and <strong>Node.js/Express</strong>. Implemented prompt structuring schemas with the <strong>Gemini API</strong> to output clean JSON schemas for sections, feeding an ATS optimization pipeline. The app handles binary data handling (PDF/Images) with <strong>Multer</strong>.
+                            </p>
+
+                            <div class="project-features">
+                                <div><strong>API Integrations:</strong> Clean API layer wrapping Gemini models for text optimization.</div>
+                                <div><strong>Security:</strong> Secure cookie-based JWT authorization configurations.</div>
+                                <div><strong>Automated CD:</strong> GitHub Actions pipeline targeting zero-downtime Vercel releases.</div>
+                            </div>
+                        </div>
+
+                        <!-- Architectural Visual Panel -->
+                        <div class="project-visual-panel">
+                            <div class="arch-title">AI Pipeline & Deploy Workflow</div>
+                            <div class="architecture-diagram craft-arch">
+                                <!-- Client -->
+                                <div class="arch-node client-node">
+                                    <div class="node-label">React Client</div>
+                                    <div class="node-sub">Vite SPA</div>
+                                </div>
+                                <div class="arch-arrow">➔</div>
+                                <!-- API -->
+                                <div class="arch-node api-node">
+                                    <div class="node-label">Express Server</div>
+                                    <div class="node-sub">Multer Handler</div>
+                                </div>
+                                <div class="arch-arrow-split">
+                                    <div class="arrow-up">↗</div>
+                                    <div class="arrow-down">↘</div>
+                                </div>
+                                <div class="arch-node-group">
+                                    <!-- Gemini -->
+                                    <div class="arch-node gemini-node">
+                                        <div class="node-label">Gemini API</div>
+                                        <div class="node-sub">Prompt Engine</div>
+                                    </div>
+                                    <!-- CD -->
+                                    <div class="arch-node cd-node">
+                                        <div class="node-label">Vercel Deploy</div>
+                                        <div class="node-sub">GitHub Actions</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tech-stack-list">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">Gemini API</span>
+                                <span class="tech-tag">Multer</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Vercel</span>
+                                <span class="tech-tag">Vite</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="project-metric">
+                            <span class="metric-val">100%</span>
+                            <span class="metric-desc">Zero-Downtime Deploy Automations</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mahmad091323" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Codebase
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 4: SymbiConnect -->
+                <article class="project-showcase">
+                    <div class="project-header">
+                        <div class="project-meta">
+                            <span class="project-tag">Real-Time Networking</span>
+                            <span class="project-tag font-mono">WebSockets & Event-Driven</span>
+                        </div>
+                        <h3 class="project-title">SymbiConnect — Real-Time College Chat</h3>
+                    </div>
+
+                    <div class="project-body-grid">
+                        <div class="project-details">
+                            <h4 class="details-heading">The Challenge</h4>
+                            <p>
+                                Sustaining stateful websocket connections with database-backed historical lookups without introducing I/O blockers on single-threaded Express handlers.
+                            </p>
+                            
+                            <h4 class="details-heading">The Architecture</h4>
+                            <p>
+                                Developed an event-driven messaging gateway with <strong>Socket.io</strong>. Implemented persistent MongoDB Atlas logging to capture chat states, utilizing JWT payloads to authenticate handshakes. Optimized websocket performance boundaries by decoupling logging from broadcast execution loops.
+                            </p>
+
+                            <div class="project-features">
+                                <div><strong>Real-time Broadcasts:</strong> Socket event loops for low-latency messaging.</div>
+                                <div><strong>Secure Handshakes:</strong> Connection validation utilizing custom JWT validation.</div>
+                                <div><strong>Availability:</strong> Structured deployment pipelines targeting 99% uptime.</div>
+                            </div>
+                        </div>
+
+                        <!-- Architectural Visual Panel -->
+                        <div class="project-visual-panel">
+                            <div class="arch-title">Event-Driven WebSocket Model</div>
+                            <div class="architecture-diagram symbi-arch">
+                                <!-- Users -->
+                                <div class="arch-node client-node">
+                                    <div class="node-label">Web Users</div>
+                                    <div class="node-sub">Tailwind CSS Views</div>
+                                </div>
+                                <div class="arch-arrow-bidir">⇅</div>
+                                <!-- WS Server -->
+                                <div class="arch-node ws-node">
+                                    <div class="node-label">Socket.io Server</div>
+                                    <div class="node-sub">Stateful Handshake</div>
+                                </div>
+                                <div class="arch-arrow">➔</div>
+                                <!-- Storage -->
+                                <div class="arch-node db-node">
+                                    <div class="node-label">MongoDB Atlas</div>
+                                    <div class="node-sub">Persistent Chat Log</div>
+                                </div>
+                            </div>
+
+                            <div class="tech-stack-list">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">Socket.io</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">MongoDB Atlas</span>
+                                <span class="tech-tag">JWT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="project-metric">
+                            <span class="metric-val">99%</span>
+                            <span class="metric-desc">Uptime on Render Deployment</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mahmad091323" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Codebase
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Leadership Section -->
+        <section id="leadership" class="leadership-section container reveal">
+            <h2 class="section-title">04. Technical Leadership</h2>
+            <p class="section-subtitle">Fostering open-source cultures and engineering development.</p>
+
+            <div class="timeline">
+                <!-- TIMELINE ITEM 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content-card">
+                        <div class="timeline-header">
+                            <span class="timeline-duration">2024 — Present</span>
+                            <h3 class="timeline-role">Co-Founder & Lead</h3>
+                            <h4 class="timeline-org">FOSS Club, Symbiosis Institute of Technology</h4>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>Established Pune's premier open-source student cohort from the ground up, promoting community-led development principles.</li>
+                            <li><strong>Lead Organizer for FOSSHack24:</strong> Coordinated sponsor deliverables, mentor schedules, and venue logistics for over <strong>200+ developer attendees</strong>.</li>
+                            <li>Mentored junior developers in distributed version control (Git workflows), licensing compliance models, and open-source contribution patterns.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TIMELINE ITEM 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content-card">
+                        <div class="timeline-header">
+                            <span class="timeline-duration">2023 — 2024</span>
+                            <h3 class="timeline-role">Flutter Lead</h3>
+                            <h4 class="timeline-org">Google Developer Student Clubs (GDSC), SIT</h4>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>Organized structural workshops covering mobile app development, state management models, and clean client architectures.</li>
+                            <li>Mentored and guided <strong>100+ students</strong> to build and deploy cross-platform applications on GitHub.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="achievements-section container reveal">
+            <h2 class="section-title">05. Major Accomplishments</h2>
+            <p class="section-subtitle">Hackathon wins and competitive placements.</p>
+
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">🏆</div>
+                    <h3 class="achievement-title">Winner</h3>
+                    <h4 class="achievement-subtitle">Rewind & Recode Hackathon</h4>
+                    <p class="achievement-description">
+                        Awarded First Place in the Maharashtra Zone for building an optimized technical solution under intense time pressure.
+                    </p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">🎖️</div>
+                    <h3 class="achievement-title">Finalist</h3>
+                    <h4 class="achievement-subtitle">Smart India Hackathon</h4>
+                    <p class="achievement-description">
+                        Advanced to the national-level internal evaluation round, ranking among top teams for complex system architecture proposals.
+                    </p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">📈</div>
+                    <h3 class="achievement-title">200+ Mentored</h3>
+                    <h4 class="achievement-subtitle">Community Impact</h4>
+                    <p class="achievement-description">
+                        Maintained active contributions to Git workflows, mentoring peers to achieve their first pull requests on open-source systems.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education-section container reveal">
+            <h2 class="section-title">06. Education</h2>
+            
+            <div class="education-timeline">
+                <div class="edu-card">
+                    <div class="edu-header">
+                        <span class="edu-year">B.Tech (2022 — 2026)</span>
+                        <h3 class="edu-degree">Computer Science (Engineering)</h3>
+                        <h4 class="edu-school">Symbiosis Institute of Technology, Pune</h4>
+                    </div>
+                    <p class="edu-description">Focusing on Algorithms, Database Systems, Cloud Computing, and Machine Learning applications.</p>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-header">
+                        <span class="edu-year">Class XII (CBSE)</span>
+                        <h3 class="edu-degree">Higher Secondary Education</h3>
+                        <h4 class="edu-school">Allenhouse Public School, Kanpur</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="certifications-section container reveal">
+            <h2 class="section-title">07. Certifications</h2>
+            <p class="section-subtitle">Validated credentials across computer science, cloud infrastructure, and AI domains.</p>
+
+            <div class="certifications-grid">
+                <!-- CS Core -->
+                <div class="cert-category-card">
+                    <div class="cert-domain-header">
+                        <span class="cert-domain-badge font-mono">CORE CS</span>
+                    </div>
+                    <ul class="cert-list">
+                        <li>
+                            <div class="cert-title">CS50: Introduction to Computer Science</div>
+                            <div class="cert-issuer">HarvardX</div>
+                        </li>
+                        <li>
+                            <div class="cert-title">Data Structures & Algorithms in Java</div>
+                            <div class="cert-issuer">Apna College</div>
+                        </li>
+                        <li>
+                            <div class="cert-title">Java Programming Certification</div>
+                            <div class="cert-issuer">Duke University</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Cloud -->
+                <div class="cert-category-card">
+                    <div class="cert-domain-header">
+                        <span class="cert-domain-badge font-mono">CLOUD</span>
+                    </div>
+                    <ul class="cert-list">
+                        <li>
+                            <div class="cert-title">AWS Certified Solutions Architect</div>
+                            <div class="cert-issuer">Udemy</div>
+                        </li>
+                        <li>
+                            <div class="cert-title">AWS Cloud Practitioner</div>
+                            <div class="cert-issuer">Udemy</div>
+                        </li>
+                        <li>
+                            <div class="cert-title">Nutanix Certified Associate (NCA 6.0)</div>
+                            <div class="cert-issuer">Nutanix</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- AI -->
+                <div class="cert-category-card">
+                    <div class="cert-domain-header">
+                        <span class="cert-domain-badge font-mono">AI & ML</span>
+                    </div>
+                    <ul class="cert-list">
+                        <li>
+                            <div class="cert-title">Deep Learning Specialization</div>
+                            <div class="cert-issuer">Coursera / DeepLearning.AI</div>
+                        </li>
+                        <li>
+                            <div class="cert-title">Machine Learning Certificate</div>
+                            <div class="cert-issuer">Scaler</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section container reveal">
+            <h2 class="section-title">08. Start a Conversation</h2>
+            <p class="section-subtitle">Let's discuss distributed architecture design, backend roles, or community engagement.</p>
+
+            <div class="contact-grid">
+                <!-- Info cards -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </div>
+                        <div class="info-text">
+                            <span class="info-label">Direct Email</span>
+                            <a href="mailto:mahmad091323@gmail.com" class="info-val">mahmad091323@gmail.com</a>
+                            <button id="copy-email-btn" class="btn-copy" aria-label="Copy email address to clipboard">Copy Address</button>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        </div>
+                        <div class="info-text">
+                            <span class="info-label">Phone Support</span>
+                            <a href="tel:+916307255630" class="info-val">+91 63072 55630</a>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        </div>
+                        <div class="info-text">
+                            <span class="info-label">Location Base</span>
+                            <span class="info-val">Pune / Kanpur, India</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live-Validating Contact Form (Mock-Connected) -->
+                <div class="contact-form-wrapper">
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-name">Full Name</label>
+                                <input type="text" id="form-name" name="name" required placeholder="Alexander Wright">
+                                <span class="error-msg" id="name-error">Name is required</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Work Email</label>
+                                <input type="email" id="form-email" name="email" required placeholder="alex@company.com">
+                                <span class="error-msg" id="email-error">Enter a valid email address</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="form-subject">Subject</label>
+                            <input type="text" id="form-subject" name="subject" required placeholder="Backend Engineering Opportunities">
+                            <span class="error-msg" id="subject-error">Subject is required</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-message">Brief Project / Inquiry Details</label>
+                            <textarea id="form-message" name="message" rows="5" required placeholder="Hi Mohammad, we saw RoomSync and Codemia. We'd love to chat about..."></textarea>
+                            <span class="error-msg" id="message-error">Message cannot be empty</span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            Transmit Message
+                            <svg class="btn-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Custom Notification Toast -->
+    <div id="toast" class="toast" role="alert" aria-live="assertive" aria-hidden="true">
+        <span id="toast-message">Message transmitted successfully!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-copy">&copy; 2026 Mohammad Ahmad. Built from scratch with semantic HTML, modular CSS, and vanilla JS.</p>
+            <div class="footer-links">
+                <a href="https://github.com/mahmad091323" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="mailto:mahmad091323@gmail.com">Email</a>
+                <a href="assets/resume.pdf" download="Mohammad_Ahmad_Resume.pdf">Resume</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>
