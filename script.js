@@ -514,4 +514,55 @@ document.addEventListener("DOMContentLoaded", () => {
         setCanvasDimensions();
         renderSystemAnimation();
     }
+
+    /* ==========================================================================
+       13. ElevenLabs Conversational AI Widget Integration
+       ========================================================================== */
+    const initElevenLabsWidget = () => {
+        // Create widget element with public agent ID
+        const widget = document.createElement("elevenlabs-convai");
+        widget.setAttribute("agent-id", "agent_3501kxqsctqre61a53yprn7wp1r8");
+        
+        // Match dark/light theme dynamically using hex codes aligned with custom tokens
+        const updateWidgetTheme = () => {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            if (currentTheme === "dark") {
+                widget.setAttribute("avatar-orb-color-1", "#8b5cf6"); // Purple branding accent
+                widget.setAttribute("avatar-orb-color-2", "#3b82f6"); // Blue branding accent
+                widget.setAttribute("action-text", "Talk to My AI Assistant");
+            } else {
+                widget.setAttribute("avatar-orb-color-1", "#7c3aed"); // Light theme purple
+                widget.setAttribute("avatar-orb-color-2", "#2563eb"); // Light theme blue
+                widget.setAttribute("action-text", "Talk to My AI Assistant");
+            }
+        };
+        
+        // Set initial theme configurations
+        updateWidgetTheme();
+        
+        // Listen for theme attribute mutations on <html> to update widget values in real-time
+        const themeObserver = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === "attributes" && mutation.attributeName === "data-theme") {
+                    updateWidgetTheme();
+                }
+            });
+        });
+        themeObserver.observe(document.documentElement, { attributes: true });
+
+        // Append conversational AI custom tag to body
+        document.body.appendChild(widget);
+
+        // Lazily inject loader script to prevent blocking initial page renders
+        const script = document.createElement("script");
+        script.src = "https://unpkg.com/@elevenlabs/convai-widget-embed";
+        script.async = true;
+        script.type = "text/javascript";
+        document.body.appendChild(script);
+    };
+
+    // Lazy load ElevenLabs widget 1000ms after initial page layout loads completely
+    window.addEventListener("load", () => {
+        setTimeout(initElevenLabsWidget, 1000);
+    });
 });
